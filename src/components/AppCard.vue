@@ -1,31 +1,40 @@
 <script>
 export default {
   name: "AppCard",
+  props: {
+    info: Object,
+  },
 };
 </script>
 
 <template>
   <div class="card">
-    <img
-      src="https://images.amcnetworks.com/amc.com/wp-content/uploads/2015/04/cast_bb_700x1000_walter-white-lg.jpg"
-      alt="ww"
-    />
-    <h3>WALTER WHITE</h3>
-    <div>Breaking Bad</div>
-    <div>Presumed dead</div>
+    <img :src="info.img" alt="info.name" />
+    <h3>{{ info.name }}</h3>
+    <div>{{ info.category }}</div>
+    <div class="status">
+      <em> {{ info.status }} </em>
+    </div>
   </div>
 </template>
 
 <style scoped>
 img {
-  max-width: 100%;
-  width: 200px;
+  width: 160px;
   padding: 10px;
 }
 
 .card {
   background-color: #2e3a46;
+
+  width: 200px;
+  margin: 10px;
+  padding: 5px;
   text-align: center;
   color: white;
+}
+
+.status {
+  color: lightblue;
 }
 </style>

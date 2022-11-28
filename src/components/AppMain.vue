@@ -1,9 +1,23 @@
 <script>
+import axios from "axios";
 import AppCard from "./AppCard.vue";
 export default {
   name: "AppMain",
   components: {
     AppCard,
+  },
+  data() {
+    return {
+      personaggi: [],
+    };
+  },
+  created() {
+    axios
+      .get("https://www.breakingbadapi.com/api/characters")
+      .then((risposta) => {
+        console.log(risposta.data);
+        this.personaggi = risposta.data;
+      });
   },
 };
 </script>
@@ -12,7 +26,8 @@ export default {
   <section class="container">
     <select name="" id="">
       <option selected>Select category</option>
-      <option value="">Opt 1</option>
+      <option value="">Breaking Bad</option>
+      <option value="">Better Call Saul</option>
     </select>
     <div class="container-cards">
       <div class="founds">
@@ -20,10 +35,7 @@ export default {
       </div>
       <div class="row">
         <div class="col">
-          <AppCard />
-        </div>
-        <div class="col">
-          <AppCard />
+          <AppCard v-for="personaggio in personaggi" :info="personaggio" />
         </div>
       </div>
     </div>
@@ -54,7 +66,7 @@ select {
   max-width: 900px;
   padding: 10px;
   margin: auto;
-  background-color: #2e3a46;
+  background-color: #212529;
   color: white;
 }
 
@@ -66,5 +78,8 @@ select {
 }
 .col {
   margin: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 </style>
