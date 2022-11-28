@@ -16,9 +16,14 @@ export default {
   </section>
 </template>
 
-<style>
+<style scoped>
 .header {
   height: 80px;
   display: flex;
+}
+
+h1 {
+  color: white;
+  margin-left: 10px;
 }
 </style>

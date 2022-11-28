@@ -8,8 +8,9 @@ export default {
   <img src="../assets/logo.png" alt="logo" />
 </template>
 
-<style>
+<style scoped>
 img {
   max-width: 100%;
+  height: 50px;
 }
 </style>
