@@ -15,6 +15,9 @@ export default {
       <option value="">Opt 1</option>
     </select>
     <div class="container-cards">
+      <div class="founds">
+        <h4>Found 62 characters</h4>
+      </div>
       <div class="row">
         <div class="col">
           <AppCard />
@@ -29,7 +32,10 @@ export default {
 
 <style>
 select {
-  padding: 10px;
+  padding: 5px 20px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: none;
 }
 
 .container {
@@ -40,7 +46,16 @@ select {
 .container-cards {
   background-color: white;
   margin: auto;
+  padding: 10px;
   max-width: 1000px;
+}
+
+.founds {
+  max-width: 900px;
+  padding: 10px;
+  margin: auto;
+  background-color: #2e3a46;
+  color: white;
 }
 
 .row {
